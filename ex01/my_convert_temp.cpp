@@ -3,14 +3,13 @@
 #include<string>
  using namespace std;
 
-int my_convert_temp(int tempIn,char **typein)
+void my_convert_temp()
 {
 	const unsigned short P = 32;
 	const double R = 5.0 / 9.0;
  
-	double tempOut;
-	string typeOut;
-	string typeIn = *typein;
+	double tempIn,tempOut;
+	string typeIn,typeOut;
 	cin >> tempIn >> typeIn;
 	cin.ignore(100,'\n');
 	
@@ -19,24 +18,17 @@ int my_convert_temp(int tempIn,char **typein)
 		tempOut = tempIn / R + P; typeOut = "Fahrenheit"; typeIn = "Celsius";
 		cout.setf(ios::right);
 		cout<<setiosflags(ios::fixed)<<setfill(' ')<<setw(16)<<setprecision(3)<<tempOut<<setw(16)<<typeOut<<endl;
-		return 0;
+		exit(0);
 	}
 	if(typeIn == "Fahrenheit")
 	{
 		tempOut= (tempIn - P) * R; typeOut = "Celsius"; typeIn = "Fahrenheit";
 		cout.setf(ios::right);
 		cout<<setiosflags(ios::fixed)<<setfill(' ')<<setw(16)<<setprecision(3)<<tempOut<<setw(16)<<typeOut<<endl;
-		return 0;
+		exit(0);
 	}
 	else
 	{
 		cout << "Invalid Input" << "\n";
 	}
-	return 0;
-}
-
-int main(int ac,char **av)
-{
-	my_convert_temp(int tempIn,char **typein);
-	return 0;
 }
