@@ -35,7 +35,7 @@ int my_convert_temp(int tempIn,char **typein)
 	return 0;
 }
 
-int main(int tempIn,char **typein)
+int main(int ac,char **av)
 {
 	my_convert_temp(int tempIn,char **typein);
 	return 0;
