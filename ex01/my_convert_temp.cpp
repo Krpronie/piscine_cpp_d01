@@ -3,13 +3,14 @@
 #include<string>
  using namespace std;
 
-int main()
+int my_convert_temp(int tempIn,char **typein)
 {
 	const unsigned short P = 32;
 	const double R = 5.0 / 9.0;
  
-	double tempIn, tempOut;
-	string typeIn, typeOut;
+	double tempOut;
+	string typeOut;
+	string typeIn = *typein;
 	cin >> tempIn >> typeIn;
 	cin.ignore(100,'\n');
 	
@@ -31,5 +32,11 @@ int main()
 	{
 		cout << "Invalid Input" << "\n";
 	}
+	return 0;
+}
+
+int main(int tempIn,char **typein)
+{
+	my_convert_temp(int tempIn,char **typein);
 	return 0;
 }
